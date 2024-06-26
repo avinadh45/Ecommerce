@@ -314,6 +314,7 @@ const addcoupon = async (req, res) => {
       //     return res.status(400).render('addcoupon', { errorMessage: 'Coupon code already exists.' });
       // }
      
+      console.log("coupon",coupon);
       const coupon = new Coupon({
           couponCode: couponCode,
           couponName: couponName,
@@ -323,7 +324,6 @@ const addcoupon = async (req, res) => {
           offer: offer,
           MinimumAmount: MinimumAmount
       });
-
       await coupon.save();
 
       
